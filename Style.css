@@ -91,4 +91,93 @@ a
     }
 }
 
+/* ===== Layout de 3 columnas ===== */
+.app
+{
+    position:relative;
+    z-index:1;
+    max-width:1480px;
+    margin:auto;
+    padding:26px;
+    display:grid;
+    grid-template-columns:230px minmax(0,1fr) 310px;
+    gap:22px;
+    align-items:start
+}
+
+.main
+{
+    display:grid;
+    gap:22px
+}
+
+.right
+{
+    display:grid;
+    gap:22px
+}
+.card
+{
+    background:var(--card);
+    backdrop-filter:blur(14px);
+    border:1.5px solid var(--line);
+    border-radius:var(--r);
+    box-shadow:var(--shadow);
+    padding:24px;transition:transform .35s var(--ease),box-shadow .35s
+}
+
+.card:hover
+{
+    transform:translateY(-3px);
+    box-shadow:0 20px 40px -16px rgba(94,140,190,.45)
+}
+
+h2
+{
+    display:flex ;
+    align-items:center; 
+    gap:10px; /* Recordar!! Un solo valor (aplica el mismo espacio para filas y columnas) */
+    font-size:19px ; 
+    margin-bottom:18px
+}
+
+h2 .ic
+{
+    color:var(--teal)
+
+}
+
+h2 b
+{
+    color:var(--mint-d); 
+    font-weight:400; 
+    animation:beat 2s ease-in-out infinite
+}
+
+@keyframes beat
+{
+    0%,100%
+    {
+        transform:scale(1)
+    }
+    50%
+    {
+        transform:scale(1.25)
+    }
+}
+
+/* Aparición al hacer scroll */
+.reveal
+{
+    opacity: 0;
+    transform:translateY(22px) ;
+    transition:opacity .7s ease,transform .7s var(--ease)
+}
+.reveal.in
+{
+    opacity: 1 ;
+    transform:none
+}
+
+
 }

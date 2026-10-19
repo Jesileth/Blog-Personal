@@ -14,3 +14,13 @@ const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
     box.appendChild(s);
   }
 })();
+
+/* 2. Aparición suave al hacer scroll (también activa las barras de habilidades) */
+const io = new IntersectionObserver(
+    entries => 
+        {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, 
+            { threshold: 0.15 });
+            
+$$('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 90 + 'ms'; io.observe(el); });
