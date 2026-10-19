@@ -333,8 +333,16 @@ h1
     max-width:400px;
     line-height:1.7;
     color:#587089;
-    font-size:14.5px
+    font-size:14.5px;
+    text-align: justify;
 }
+
+.bold-name {
+  font-weight: 700;    
+  color: var(--navy); 
+  font-family: inherit;
+}
+
 .btn
 {
     margin-top:24px; 
@@ -973,3 +981,5 @@ body::after{right:0;bottom:0;transform:rotate(180deg)}
     mask:radial-gradient(circle at 0 100%,#000,transparent 70%)
 }
 
+.item-badge { width:48px; height:48px; border-radius:12px; background:#EAF7FF; color:#2B8FBF; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .item-badge svg { width:24px; height:24px; }

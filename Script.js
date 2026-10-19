@@ -112,7 +112,7 @@ $('#more').addEventListener('click', e => {
   }
   const t = document.createElement('div');
   t.className = 'toast';
-  t.textContent = '¡Gracias por visitar mi rinconcito! ♡';
+  t.textContent = '¡Gracias por visitar mi Blog personal! ♡';
   document.body.appendChild(t);
   requestAnimationFrame(() => t.classList.add('show'));
   setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 500); }, 2600);
