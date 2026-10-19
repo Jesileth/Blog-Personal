@@ -179,5 +179,247 @@ h2 b
     transform:none
 }
 
+/* ===== Barra lateral ===== */
+.side
+{
+    position: sticky ;
+    top:26px;
+    min-height:calc(100vh - 52px);
+    display:flex;
+    flex-direction:column; 
+    padding:26px 16px;
+    background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(222,244,248,.7))
+}
+/*Sombra*/
+.side:hover
+{
+    transform:none
+}
 
+.brand
+{
+    display:grid;
+    place-items:center;
+    margin-bottom:26px;
+    animation:bob 4s ease-in-out infinite
+}
+
+@keyframes bob{50%{transform:translateY(-6px) rotate(-3deg)}}
+
+.nav
+{
+    display:grid;
+    gap:8px
+}
+.nav a
+{
+    display:flex ;
+    align-items:center;
+    gap:14px;
+    padding:13px 16px;
+    border-radius:25px;
+    font-weight:600;
+    font-size:15px;
+    color:#4a6585;
+    position:relative;
+    transition:.3s var(--ease)
+}
+.nav a:hover
+{
+    background:rgba(255,255,255,.8); 
+    transform:translateX(5px)
+}
+.nav a.active
+{
+    background:linear-gradient(90deg,#c9ecea,#e1f6f4);
+    color:#2d8c8c;box-shadow:0 6px 14px -8px var(--teal)
+}
+.nav a.active::after
+{
+    content:"♥";
+    position:absolute;
+    right:14px;
+    font-size:13px ;
+    color:var(--teal);
+    animation:beat 1.8s infinite
+}
+.side-foot{margin-top:auto;display:grid;gap:14px;justify-items:center}
+.soc{display:flex;gap:9px}
+
+.soc a
+{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    font-size:12px;
+    font-weight:700;
+    color:#fff;
+    transition:.3s var(--ease)
+}
+.soc a:hover
+{
+    transform:translateY(-4px) rotate(8deg)
+}
+
+.thanks
+{
+    font-family:'Caveat',cursive;
+    font-size:20px;
+    color:var(--teal-d)}
+
+}
+
+/* Círculos de colores de redes (pastel) */
+.c-ig{background:linear-gradient(135deg,#6fd3bf,#8fc4ef)}
+.c-pi{background:#5fbfb4}.c-be{background:#8db7f0}.c-tt{background:#3d4d63}
+.c-gr{background:#cfeadf;color:#3f7a6a}.c-sp{background:#9fdcb5}.c-an{background:#8fc4ef}
+
+/* ===== Hero ===== */
+.hero
+{
+    position:relative;
+    display:grid ;
+    grid-template-columns:1.05fr .95fr ;
+    gap:10px;
+    padding:0;
+    overflow:hidden;
+    min-height:330px;
+    background:radial-gradient(circle at 15% 20%,#e3f7f6,transparent 60%),
+    linear-gradient(120deg,#c6eeee,#dcf5ec 60%,#cde5fb)
+}
+
+.hero-text{padding:44px 0 40px 44px;position:relative;z-index:2}
+h1
+{
+    font-size:clamp(28px,3.6vw,42px);
+    line-height:1.15
+}
+
+.name
+{
+    font-family:'Dancing Script',cursive;
+    font-weight:700;font-size:1.25em;
+    background:linear-gradient(90deg,#2f9f9c,#4fb7d8,#58c9a2,#2f9f9c);
+    background-size:250% 100%;-webkit-background-clip:text;
+    background-clip:text;color:transparent;
+    animation:shine 6s linear infinite
+}
+@keyframes shine
+{
+    to
+    {
+        background-position:250% 0
+    }
+}
+
+.role
+{
+    margin-top:10px ;
+    font-size:16px ;
+    color:#4d6785 ;
+    font-weight:600 
+}
+.role i
+{
+    color:var(--mint-d) ;
+    font-style:normal ;
+    margin:0 4px
+}
+.bio
+{
+    margin-top:16px;
+    max-width:400px;
+    line-height:1.7;
+    color:#587089;
+    font-size:14.5px
+}
+.btn
+{
+    margin-top:24px; 
+    display:inline-flex; 
+    align-items:center;
+    gap:10px;border:0;
+    cursor:pointer;
+    font:600 15px 'Quicksand',sans-serif;
+    color:#fff;padding:13px 26px;
+    border-radius:99px;
+    background:linear-gradient(135deg,#62c6c1,#4aaeb3);
+    box-shadow:0 12px 22px -10px var(--teal-d);
+    transition:.3s var(--ease);
+    position:relative;
+    overflow:visible
+}
+.btn:hover
+{
+    transform:translateY(-3px) scale(1.03)
+}
+.btn:hover .ic
+{
+    animation:nudge .6s infinite alternate
+}
+@keyframes nudge
+{
+    to
+    {
+        transform:translateX(5px)
+    }
+}
+.hero-art
+{
+    position:relative;
+    z-index:1;
+    display:grid;
+    place-items:end center
+}
+.girl
+{
+    width:min(100%,370px);
+    height:auto;
+    margin-bottom:-6px;
+    animation:float 5s ease-in-out infinite;
+    filter:drop-shadow(0 0 0 #fff) drop-shadow(0 4px 0 #fff) drop-shadow(0 14px 16px rgba(60,130,150,.28))
+}
+
+@keyframes float
+{
+    50%
+    {
+        transform:translateY(-10px)
+    }
+}
+.eyes
+{
+    transform-origin:150px 160px;
+    animation:blink 5s infinite
+}
+
+@keyframes blink
+{
+    0%,93%,100%{transform:scaleY(1)}
+    96%{transform:scaleY(.1)}
+}
+.fl
+{
+    position:absolute;
+    font-size:22px;
+    color:var(--mint-d);
+    animation:twinkle 3.5s ease-in-out infinite
+}
+.f1
+{
+    left:8%;
+    top:18%;color:#7fd0cc
+}.f2
+{
+    right:10%;top:12%;animation-delay:1s
+}.f3
+{
+    left:16%;bottom:24%;color:var(--teal);animation-delay:2s
+}.f4
+{
+    right:6%;bottom:30%;
+    color:var(--sky-d);
+    animation-delay:.6s
 }

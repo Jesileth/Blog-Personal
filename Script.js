@@ -22,5 +22,14 @@ const io = new IntersectionObserver(
             entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
         }, 
             { threshold: 0.15 });
-            
+
 $$('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 90 + 'ms'; io.observe(el); });
+
+/* 3. Menú: marca la sección visible */
+const links = $$('#nav a');
+const spy = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle('active', a.hash === '#' + e.target.id));
+  });
+}, { rootMargin: '-35% 0px -55% 0px' });
+$$('main section, #favoritos').forEach(s => spy.observe(s));
