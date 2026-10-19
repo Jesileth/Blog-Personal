@@ -343,6 +343,17 @@ h1
   font-family: inherit;
 }
 
+.bunny {
+  width:70px;      /* igual que el svg width */
+  height:70px;     /* igual que el svg height */
+  object-fit:contain;
+  display:block;
+  /* si necesitas ubicarlo dentro del .note como antes */
+  position: absolute;
+  right: 12px;
+  bottom: 6px;
+}
+
 .btn
 {
     margin-top:24px; 
