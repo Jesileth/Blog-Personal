@@ -33,3 +33,29 @@ const spy = new IntersectionObserver(entries => {
   });
 }, { rootMargin: '-35% 0px -55% 0px' });
 $$('main section, #favoritos').forEach(s => spy.observe(s));
+
+/* 4. Carrusel de la galería */
+(() => {
+  const track = $('#track'), dots = $('#dots'), slides = [...track.children];
+  const perPage = () => Math.max(1, Math.round(track.clientWidth / slides[0].offsetWidth));
+  const pages = () => Math.ceil(slides.length / perPage());
+  const page = () => Math.round(track.scrollLeft / track.clientWidth);
+ 
+  function build() {
+    dots.innerHTML = '';
+    for (let i = 0; i < pages(); i++) {
+      const b = document.createElement('button');
+      b.setAttribute('aria-label', 'Página ' + (i + 1));
+      b.onclick = () => track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+      dots.appendChild(b);
+    }
+    mark();
+  }
+  function mark() { $$('button', dots).forEach((b, i) => b.classList.toggle('on', i === Math.min(page(), pages() - 1))); }
+ 
+  $('#next').onclick = () => track.scrollBy({ left: track.clientWidth, behavior: 'smooth' });
+  $('#prev').onclick = () => track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' });
+  track.addEventListener('scroll', () => requestAnimationFrame(mark));
+  addEventListener('resize', build);
+  build();
+})();
