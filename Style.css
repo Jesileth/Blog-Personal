@@ -1,0 +1,94 @@
+/* ===== Paleta pastel (utilizando colores verdes y suaves) ===== */
+:root{
+  --navy:#2e4a6b; --muted:#6f86a0;
+  --sky:#d9f1f7; --aqua:#a9e3df; --teal:#55b9b5; --teal-d:#3a9f9f;
+  --mint:#d2f2e4; --mint-d:#5fc8a8; --ice:#d3eafc; --sky-d:#7fbfea; --blue:#cfe6fb;
+  --card:rgba(255,255,255,.78); --line:rgba(255,255,255,.9);
+  --shadow:0 14px 34px -16px rgba(94,140,190,.38);
+  --r:24px; --ease:cubic-bezier(.22,.9,.3,1.2);
+
+  *{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+
+body
+{
+    font-family:'Quicksand','Segoe UI',sans-serif;
+    color:var(--navy);
+    min-height:100vh;
+    background:linear-gradient(125deg,#d3f3f6 0%,#e0f6ef 50%,#d2e8fb 100%) 
+    fixed;overflow-x:hidden
+}
+
+h1,h2
+{
+    font-family:'Fredoka','Quicksand',sans-serif;
+    font-weight:500
+}
+
+a
+{
+    color:inherit;
+    text-decoration:none
+}
+
+.ic
+{
+    width:20px;
+    height:20px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    flex:none
+}
+
+/* ===== Destellos flotantes de fondo ===== */
+.sparkles
+{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    overflow:hidden
+}
+
+.sparkles span
+{
+    position:absolute;
+    opacity:0;
+    animation:twinkle var(--d) ease-in-out var(--dl) infinite
+}
+
+/* Para las animaciones */
+@keyframes twinkle
+{
+    0%,100%
+    {
+        opacity:0;
+        transform:translateY(8px) scale(.6) rotate(0)
+    }
+        50%
+        {
+            opacity:.85;
+            transform:translateY(-14px) scale(1) rotate(20deg)
+        }
+}
+
+.trail
+{
+    position:fixed;
+    pointer-events:none ;
+    z-index:50 ;
+    animation:fade .9s ease-out forwards
+}
+
+@keyframes fade
+{
+    to
+    {
+        opacity:0;transform:translateY(16px) scale(.3) rotate(60deg)
+    }
+}
+
+}
