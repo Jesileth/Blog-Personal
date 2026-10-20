@@ -1134,7 +1134,7 @@ body::after{right:0;bottom:0;transform:rotate(180deg)}
 .lv1{background:#d9eafc;color:#4676b4}
 .lv2{background:#cfeee3;color:#2f8a68}
 .lv3{background:#d3f0ee;color:#2c8a8a}
-.lv4{background:#ece0ca;color:#967462}
+.lv4{background:#FED3CC;color:#6C3422}
 
 .kbar{display:flex;align-items:center;gap:10px}
 .kbar .bar{flex:1}
